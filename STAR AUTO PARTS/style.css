@@ -1,0 +1,729 @@
+```css
+/* =========================================
+   STAR AUTO PARTS
+   Modern Automotive Website CSS
+========================================= */
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    width: 100%;
+    background: #0b0b0b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #f5c400;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+
+    min-height: 75px;
+    padding: 0 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.logo:first-letter {
+    color: #f5c400;
+}
+
+.logo span {
+    color: white;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #f5c400;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f5c400;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.90),
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 1250px;
+    width: 100%;
+
+    margin: auto;
+    padding: 50px 25px;
+
+    color: white;
+}
+
+.hero h1 {
+    max-width: 750px;
+
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: #f5c400;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 25px 0 35px;
+
+    color: #e5e5e5;
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #f5c400;
+    color: #111;
+
+    border: 2px solid #f5c400;
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #f5c400;
+
+    transform: translateY(-3px);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn.secondary:hover {
+    background: white;
+    color: #111;
+}
+
+
+/* ---------- Parts Section ---------- */
+
+.parts-section {
+    padding: 90px 25px;
+
+    background: #f4f5f7;
+
+    text-align: center;
+}
+
+.parts-section h2,
+.about h2,
+.contact h2 {
+    font-size: clamp(32px, 4vw, 45px);
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+.parts-section h2::after,
+.contact h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 15px auto 15px;
+
+    background: #f5c400;
+}
+
+.section-description {
+    color: #777;
+    margin-bottom: 50px;
+}
+
+
+/* ---------- Parts Cards ---------- */
+
+.parts-container {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.part-card {
+    position: relative;
+
+    padding: 40px 25px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    border-bottom: 4px solid transparent;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
+
+    transition: 0.35s;
+}
+
+.part-card:hover {
+    transform: translateY(-10px);
+
+    border-bottom-color: #f5c400;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.13);
+}
+
+.part-icon {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+
+    border-radius: 50%;
+
+    font-size: 38px;
+
+    transition: 0.3s;
+}
+
+.part-card:hover .part-icon {
+    transform: rotate(8deg);
+}
+
+.part-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.part-card p {
+    min-height: 80px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ---------- Card Buttons ---------- */
+
+.part-card button {
+    padding: 12px 23px;
+
+    background: #111;
+    color: white;
+
+    border: 2px solid #111;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.part-card button:hover {
+    background: #f5c400;
+    color: #111;
+
+    border-color: #f5c400;
+}
+
+
+/* ---------- About Section ---------- */
+
+.about {
+    position: relative;
+
+    padding: 100px 25px;
+
+    background: #101010;
+
+    color: white;
+}
+
+.about::before {
+    content: "STAR";
+
+    position: absolute;
+
+    right: 5%;
+    top: 25px;
+
+    font-size: 150px;
+
+    font-weight: 900;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    pointer-events: none;
+}
+
+.about-content {
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.about h2 {
+    margin-bottom: 25px;
+}
+
+.about h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 15px auto;
+
+    background: #f5c400;
+}
+
+.about p {
+    margin-top: 18px;
+
+    color: #ccc;
+
+    font-size: 16px;
+}
+
+
+/* ---------- Contact Section ---------- */
+
+.contact {
+    padding: 90px 25px;
+
+    background: white;
+
+    text-align: center;
+}
+
+.contact > p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+
+/* ---------- Owner Box ---------- */
+
+.owner-info {
+    max-width: 550px;
+
+    margin: 35px auto;
+
+    padding: 30px;
+
+    background: #111;
+
+    color: white;
+
+    border-radius: 8px;
+
+    border-left: 5px solid #f5c400;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.owner-info h3 {
+    color: #f5c400;
+
+    margin-bottom: 10px;
+
+    font-size: 23px;
+
+    text-transform: uppercase;
+}
+
+.owner-info p {
+    margin: 8px 0;
+}
+
+.owner-info strong {
+    font-size: 20px;
+}
+
+.owner-info a {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.owner-info a:hover {
+    color: #f5c400;
+}
+
+
+/* ---------- Contact Form ---------- */
+
+form {
+    max-width: 650px;
+
+    margin: 40px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    background: #f8f8f8;
+
+    color: #222;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #f5c400;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(245, 196, 0, 0.12);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+form button {
+    padding: 15px;
+
+    background: #111;
+    color: white;
+
+    border: 2px solid #111;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #f5c400;
+    color: #111;
+
+    border-color: #f5c400;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    padding: 35px 20px;
+
+    background: #070707;
+
+    color: #aaa;
+
+    text-align: center;
+
+    border-top: 2px solid #f5c400;
+}
+
+.footer-logo {
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 900;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+
+/* ---------- Scroll Animation ---------- */
+
+.part-card {
+    animation: cardAppear 0.7s ease both;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1000px) {
+
+    .parts-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero {
+        min-height: 580px;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 15px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 16px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 540px;
+
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .parts-section,
+    .about,
+    .contact {
+        padding: 65px 18px;
+    }
+
+    .parts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .part-card p {
+        min-height: auto;
+    }
+
+    .about::before {
+        font-size: 80px;
+    }
+
+    .owner-info {
+        padding: 25px 18px;
+    }
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+```
